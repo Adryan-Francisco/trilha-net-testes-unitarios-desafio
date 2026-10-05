@@ -79,3 +79,23 @@ O projeto está estruturado da seguinte maneira:
 
 ## Solução
 O código de testes está pela metade, e você deverá dar continuidade implementando os testes descritos acima, para que no final, tenhamos um programa de testes funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+
+## Executando a solução
+
+Os testes foram implementados com xUnit, seguindo o padrão Arrange, Act e Assert. Além dos dez cenários do desafio, a suíte verifica listas com zero e números negativos, preservação das listas originais, lista vazia, texto vazio e palavras fora do final do texto.
+
+Com o SDK e o runtime do .NET 6 instalados, execute na raiz do repositório:
+
+```sh
+dotnet test TestesUnitarios.Desafio.sln
+```
+
+Se a máquina possuir apenas um runtime mais recente, é possível executar os testes permitindo o uso desse runtime. No PowerShell:
+
+```powershell
+$env:DOTNET_ROLL_FORWARD = "Major"
+dotnet test TestesUnitarios.Desafio.sln
+Remove-Item Env:DOTNET_ROLL_FORWARD
+```
+
+Os projetos mantêm o destino `net6.0` do desafio original.
